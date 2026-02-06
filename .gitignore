@@ -1,0 +1,42 @@
+# ====================================================================
+# AGENT ARCHITECTURE - IGNORE RULES
+# ====================================================================
+
+# 1. Layer 2: Orchestration & Intermediates
+# Vše v .tmp/ je regenerovatelné a nesmí být v gitu
+.tmp/
+*.log
+state.json
+current_plan.md
+
+# 2. Layer 3: Execution - Security & Credentials
+# Nikdy necommitovat tajné klíče a tokeny
+.env
+credentials.json
+token.json
+*.pem
+*.key
+
+# 3. Environment & Portability
+# Cesta k externímu venv je specifická pro stroj
+.venv_path
+# Pokud by se omylem vytvořil venv v projektu
+venv/
+.venv/
+ENV/
+
+# 4. Python & System
+# Překlady a cache soubory
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# OS specifické soubory
+.DS_Store
+Thumbs.db
+
+# 5. Deliverables (pokud jsou lokální, ne cloudové)
+# Pokud generujete PDF/CSV reporty lokálně, které nemají být v gitu
+outputs/
